@@ -87,6 +87,19 @@
     @media (max-width:700px){
       body::after{background-size:90vw; background-position:center 70vh; opacity:.16}
     }
+  /* ——— Móbil: título sen caixa sobre a foto ——— */
+    @media (max-width:700px){
+      .hero img{height:48vh}
+      .hero-title{
+        background:transparent; color:#fff; border:0; padding:6px 10px;
+        text-shadow:0 4px 16px rgba(0,0,0,.45), 0 1px 2px rgba(0,0,0,.6);
+      }
+      .hero::after{
+        content:""; position:absolute; left:0; right:0; bottom:0; height:42%;
+        background:linear-gradient(to top, rgba(0,0,0,.38), rgba(0,0,0,0));
+        pointer-events:none;
+      }
+    }
   </style>
 
   <!-- Schema.org (Event) -->
@@ -185,7 +198,7 @@
   
 
   <footer>
-    © 2025 Sala A Fundación · Melide — Se queres editar esta ficha, actualiza o repositorio en GitHub Pages.
+    © 2025 Sala A Fundación · Melide
   </footer>
 
   <script>
