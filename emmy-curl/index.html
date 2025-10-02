@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>emmy Curl 🇵🇹 · 28 nov · Sala A Fundación (Melide)</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="emmy Curl 🇵🇹 en directo na Sala A Fundación (Melide). 28 de novembro, 23:00h. “Pastoral”, Premio José Afonso 2025. Entradas: 8€ anticipada / 10€ billeteira." />
+  <meta property="og:title" content="emmy Curl 🇵🇹 · 28 nov · Sala A Fundación (Melide)" />
+  <meta property="og:description" content="“Pastoral”, Premio José Afonso 2025. 28 de novembro, 23:00h. Entradas: 8€ anticipada / 10€ billeteira." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="hero.jpg" />
+  <meta name="theme-color" content="#075ebf" />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --fg:#111111;
+      --blue:#075ebf; /* azul do logo */
+      --red:#f5062e;  /* vermello do logo */
+      --acc: var(--red);
+      --mut:#80899d;  /* gris texto secundario */
+      --light:#f7f8fb; /* gris clarino de fondo */
+      --border:#e6e8ee; /* separadores claros */
+      --card:#ffffff;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--fg); line-height:1.65}
+    header{display:flex; align-items:center; justify-content:center; gap:12px; padding:18px; border-bottom:1px solid var(--border)}
+    header .brand-logo{height:44px; width:auto; border-radius:8px}
+    header .brand{font-weight:900; letter-spacing:.5px; color:var(--blue)}
+    .hero{position:relative; overflow:hidden}
+    .hero img{width:100%; height:56vh; object-fit:cover; display:block; filter:contrast(1.02) saturate(1.05)}
+    
+    .tag{position:absolute; left:16px; top:16px; background:rgba(255,255,255,.9); color:var(--blue); padding:6px 10px; border-radius:999px; font-weight:700; font-size:.95rem; border:1px solid rgba(7,94,191,.25); backdrop-filter:blur(4px)}
+    .hero-title{position:absolute; left:50%; bottom:18px; transform:translateX(-50%); background:rgba(255,255,255,.95); color:var(--fg); padding:10px 16px; border-radius:var(--radius); border:1px solid var(--border); font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight:800; letter-spacing:.5px}
+    main{max-width:980px; margin:0 auto; padding:24px 16px 40px}
+    .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:24px}
+    @media (max-width:880px){ .grid{grid-template-columns:1fr} }
+
+    .card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px}
+    h2{margin:.2rem 0 1rem; font-size:1.25rem; color:var(--blue)}
+    .meta p{margin:.35rem 0}
+    .price{display:inline-block; margin-top:.5rem; color:#fff; background:var(--red); font-weight:800; padding:6px 10px; border-radius:8px}
+    .buttons{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .btn{text-decoration:none; padding:.75rem 1rem; border-radius:10px; font-weight:700; background:var(--acc); color:#111; display:inline-flex; align-items:center; justify-content:center}
+    .btn.alt{background:#222; color:var(--fg); border:1px solid #333}
+    .muted{color:var(--mut); font-size:.95rem}
+    .bio{white-space:pre-line}
+    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:10px}
+    .gallery img{width:100%; height:180px; object-fit:cover; border-radius:10px; border:1px solid var(--border)}
+    @media (max-width:700px){ .gallery{grid-template-columns:1fr 1fr} .gallery img{height:140px} }
+
+    .yt{position:relative; background:var(--light); border-radius:12px; overflow:hidden; border:1px solid var(--border)}
+    .yt::before{content:""; display:block; padding-top:56.25%}
+    .yt iframe{position:absolute; inset:0; width:100%; height:100%}
+    .yt::before{content:""; display:block; padding-top:56.25%}
+    .yt iframe{position:absolute; inset:0; width:100%; height:100%}
+    .yt .play{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-weight:800; background:linear-gradient( to bottom, rgba(255,255,255,.0), rgba(255,255,255,.25) ); cursor:pointer}
+    .yt .play span{background:var(--red); color:#fff; padding:.6rem 1rem; border-radius:999px}
+    footer{padding:26px 16px; text-align:center; color:var(--mut); border-top:1px solid var(--border)}
+  
+  .video-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width:700px){ .video-grid{grid-template-columns:1fr} }
+    .notice{background:var(--light); border:1px solid var(--border); border-left:4px solid var(--red); padding:12px 14px; border-radius:10px; margin:10px 0}
+    .notice strong{color:var(--red)}
+    .insta-line{margin-top:10px}
+  .follow-inline{background:var(--light); border:1px solid var(--border); border-left:4px solid var(--blue); padding:10px 12px; border-radius:10px; margin:12px 0 2px; font-weight:600}
+  .follow-inline a{color:var(--blue); text-decoration:none}
+  .follow-inline a:hover{text-decoration:underline}
+  .poster{margin-top:12px}
+    .poster img{width:100%; height:auto; display:block; border:1px solid var(--border); border-radius:12px}
+  </style>
+
+  <!-- Schema.org (Event) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"MusicEvent",
+    "name":"emmy Curl",
+    "startDate":"2025-11-28T23:00:00+01:00",
+    "eventStatus":"https://schema.org/EventScheduled",
+    "location":{"@type":"MusicVenue","name":"Sala A Fundación","address":{"@type":"PostalAddress","addressLocality":"Melide","addressRegion":"A Coruña","addressCountry":"ES"}},
+    "image":["hero.jpg"],
+    "performer":{"@type":"MusicGroup","name":"emmy Curl","sameAs":"https://www.instagram.com/emmycurl/"},
+    "offers":[{"@type":"Offer","price":"8","priceCurrency":"EUR","category":"primary","availability":"https://schema.org/InStock"},{"@type":"Offer","price":"10","priceCurrency":"EUR","category":"door","availability":"https://schema.org/InStock"}],
+    "organizer":{"@type":"Organization","name":"Sala A Fundación","sameAs":"https://www.instagram.com/mosto_pt/"}
+  }
+  </script>
+  <!-- Estrutura por data: gardar este index e os ficheiros no mesmo cartafol (ex: 28nov/) como: index.html, hero.jpg, cartel.jpg, logo-sala.jpg -->
+</head>
+<body>
+  <header>
+    <img class="brand-logo" src="logo-sala.jpg" alt="Sala A Fundación" onerror="this.style.display='none'"/>
+    <div class="brand">Sala A Fundación</div>
+  </header>
+
+  <section class="hero">
+    <!-- Usamos assets locais se existen; se non, cae no fallback de YouTube -->
+    <img src="hero.jpg" onerror="this.onerror=null; this.src='cartel.jpg';" alt="emmy Curl - foto oficial" />
+    <div class="tag">🇵🇹 Artista portuguesa</div>
+    <h1 class="hero-title">emmy Curl 🇵🇹 — “Pastoral” ao vivo</h1>
+  </section>
+
+  <main>
+    <div class="grid">
+      <section class="card">
+        <h2>Sinopse</h2>
+        <div class="bio">
+          <b>emmy Curl</b>, nacida e criada nas altas montañas de Vila Real, devolve á vida as antigas melodías do folclore transmontano e celta que durante moito tempo permaneceron esquecidas. A artista dedícase a poñer en valor e a respectar o patrimonio cultural portugués, incorporando unha lectura contemporánea e o seu propio estilo interpretativo ás complexas capas rítmicas e harmónicas destas tradicións.
+
+          <b><em>Pastoral</em>, gañador do Premio José Afonso 2025</b>, é máis ca un álbum: é unha homenaxe á herdanza do folclore portugués, unha celebración da coraxe e do amor en tempos difíciles. Un convite a perderse e a deixarse envolver pola atmosfera de <em>Pastoral</em>, que soará como as voces das montañas que a arrodean. A xira de presentación de <em>Pastoral</em> chega á Sala A Fundación o 28 de novembro.
+        </div>
+
+        <p class="follow-inline">Síguea en Instagram: <a href="https://www.instagram.com/emmycurl/" target="_blank" rel="noopener">@emmycurl</a></p>
+
+        <h2 style="margin-top:1.25rem">Coñece mellor á artista</h2>
+        <div class="yt" data-id="lPjjfEAmEBY">
+          <div class="play"><span>▶︎ Ver “Mirandum”</span></div>
+        </div>
+        <div class="video-grid" style="margin-top:12px">
+          <div class="yt" data-id="GK-uUURelJc">
+            <div class="play"><span>▶︎ Botar Auga na Viña</span></div>
+          </div>
+          <div class="yt" data-id="FE_Dm1M0KqM">
+            <div class="play"><span>▶︎ Señora do Almortão</span></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card meta">
+        <h2>Info do concerto</h2>
+        <p>📅 <strong>Venres, 28 de novembro</strong></p>
+        <p>⏰ <strong>23:00 h</strong></p>
+        <p>📍 <strong>Sala A Fundación (Melide)</strong></p>
+        <p class="price">Entradas: 8€ anticipada · 10€ billeteira</p>
+
+        <div class="notice">
+          <strong>Info entradas</strong>
+          <p>Merca xa a túa entrada anticipada na Fundación ou fai a túa reserva a través do noso Instagram ou por correo electrónico.</p>
+          <p>📩 <a href="mailto:fundacionbowling@gmail.com">fundacionbowling@gmail.com</a></p>
+        </div>
+        <div class="poster">
+          <img src="cartel.jpg" alt="Cartel oficial — Sala A Fundación" onerror="this.onerror=null; this.src='hero.jpg';" />
+        </div>
+        
+
+        
+
+        <!-- Galería opcional: descomenta cando carguemos imaxes reais no cartafol da data
+        <div class="gallery">
+          <img src="emmy-2.jpg" alt="emmy Curl" />
+          <img src="emmy-3.jpg" alt="emmy Curl" />
+          <img src="emmy-4.jpg" alt="emmy Curl" />
+        </div>
+        -->
+        <!--
+        <div class="gallery">
+          <img src="assets/emmy-2.jpg" alt="emmy Curl" />
+          <img src="assets/emmy-3.jpg" alt="emmy Curl" />
+          <img src="assets/emmy-4.jpg" alt="emmy Curl" />
+        </div>
+        -->
+      </aside>
+    </div>
+  </main>
+
+  
+
+  <footer>
+    © 2025 Sala A Fundación · Melide — Se queres editar esta ficha, actualiza o repositorio en GitHub Pages.
+  </footer>
+
+  <script>
+    // Lazy load de YouTube ao facer clic
+    document.querySelectorAll('.yt').forEach(box=>{
+      const id = box.getAttribute('data-id');
+      const btn = box.querySelector('.play');
+      btn.addEventListener('click', ()=>{
+        box.innerHTML = '<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+      });
+    });
+  </script>
+</body>
+</html>
