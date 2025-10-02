@@ -73,7 +73,7 @@
   .poster{margin-top:12px}
     .poster img{width:100%; height:auto; display:block; border:1px solid var(--border); border-radius:12px}
   /* Marca de auga co logo no fondo */
-    header, .hero, main, footer{position:relative; z-index:1}
+    header, .hero, main, .follow-sala, footer{position:relative; z-index:1}
     body::after{
       content:"";
       position:fixed; inset:0; z-index:0; pointer-events:none;
@@ -101,7 +101,9 @@
       }
     }
   .follow-sala{display:flex; justify-content:center; margin:24px 0 0}
-  .follow-sala .btn{font-size:1rem; background:var(--blue); color:#fff; border:1px solid var(--blue); display:inline-flex; align-items:center; gap:10px; padding:.75rem 1.1rem}
+  .follow-sala .btn{font-size:1rem; background:var(--blue); color:#fff; border:1px solid var(--blue); display:inline-flex; align-items:center; gap:10px; padding:.85rem 1.15rem; opacity:1 !important; filter:none}
+  .follow-sala .btn:hover{filter:brightness(.92); text-decoration:none}
+  .follow-sala .btn svg{width:18px; height:18px; display:block; flex:0 0 18px}
   .follow-sala .btn:hover{filter:brightness(.95); text-decoration:none}
   .follow-sala .btn svg{width:18px; height:18px; display:block; flex:0 0 18px}
   </style>
