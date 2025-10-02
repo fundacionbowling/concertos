@@ -10,7 +10,7 @@
   <meta property="og:title" content="emmy Curl 🇵🇹 · 28 nov · Sala A Fundación (Melide)" />
   <meta property="og:description" content="“Pastoral”, Premio José Afonso 2025. 28 de novembro, 23:00h. Entradas: 8€ anticipada / 10€ billeteira." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="hero.jpg" />
+  <meta property="og:image" content="./hero.jpg" />
   <meta name="theme-color" content="#075ebf" />
 
   <style>
@@ -27,15 +27,15 @@
       --radius:14px;
     }
     *{box-sizing:border-box}
-    body{margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--fg); line-height:1.65}
+    body{margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--fg); line-height:1.65; position:relative}
     header{display:flex; align-items:center; justify-content:center; gap:12px; padding:18px; border-bottom:1px solid var(--border)}
-    header .brand-logo{height:44px; width:auto; border-radius:8px}
-    header .brand{font-weight:900; letter-spacing:.5px; color:var(--blue)}
+    header .brand-logo{height:56px; width:auto; border-radius:8px}
+    header .brand{font-weight:900; letter-spacing:.5px; color:var(--blue); font-size:1.15rem}
     .hero{position:relative; overflow:hidden}
     .hero img{width:100%; height:56vh; object-fit:cover; display:block; filter:contrast(1.02) saturate(1.05)}
     
     .tag{position:absolute; left:16px; top:16px; background:rgba(255,255,255,.9); color:var(--blue); padding:6px 10px; border-radius:999px; font-weight:700; font-size:.95rem; border:1px solid rgba(7,94,191,.25); backdrop-filter:blur(4px)}
-    .hero-title{position:absolute; left:50%; bottom:18px; transform:translateX(-50%); background:rgba(255,255,255,.95); color:var(--fg); padding:10px 16px; border-radius:var(--radius); border:1px solid var(--border); font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight:800; letter-spacing:.5px}
+    .hero-title{position:absolute; left:50%; bottom:18px; transform:translateX(-50%); background:rgba(255,255,255,.95); color:var(--fg); padding:12px 18px; border-radius:var(--radius); border:1px solid var(--border); font-size: clamp(1.75rem, 3.6vw, 2.4rem); font-weight:800; letter-spacing:.5px}
     main{max-width:980px; margin:0 auto; padding:24px 16px 40px}
     .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:24px}
     @media (max-width:880px){ .grid{grid-template-columns:1fr} }
@@ -72,6 +72,21 @@
   .follow-inline a:hover{text-decoration:underline}
   .poster{margin-top:12px}
     .poster img{width:100%; height:auto; display:block; border:1px solid var(--border); border-radius:12px}
+  /* Marca de auga co logo no fondo */
+    header, .hero, main, footer{position:relative; z-index:1}
+    body::after{
+      content:"";
+      position:fixed; inset:0; z-index:0; pointer-events:none;
+      background-image:url('./logo-sala.jpg');
+      background-repeat:no-repeat;
+      background-position:center 60vh; /* un pouco por debaixo da hero */
+      background-size:min(70vw, 720px);
+      opacity:.20; /* 20% */
+      filter:grayscale(0.1);
+    }
+    @media (max-width:700px){
+      body::after{background-size:90vw; background-position:center 70vh; opacity:.16}
+    }
   </style>
 
   <!-- Schema.org (Event) -->
@@ -83,7 +98,7 @@
     "startDate":"2025-11-28T23:00:00+01:00",
     "eventStatus":"https://schema.org/EventScheduled",
     "location":{"@type":"MusicVenue","name":"Sala A Fundación","address":{"@type":"PostalAddress","addressLocality":"Melide","addressRegion":"A Coruña","addressCountry":"ES"}},
-    "image":["hero.jpg"],
+    "image":["./hero.jpg"],
     "performer":{"@type":"MusicGroup","name":"emmy Curl","sameAs":"https://www.instagram.com/emmycurl/"},
     "offers":[{"@type":"Offer","price":"8","priceCurrency":"EUR","category":"primary","availability":"https://schema.org/InStock"},{"@type":"Offer","price":"10","priceCurrency":"EUR","category":"door","availability":"https://schema.org/InStock"}],
     "organizer":{"@type":"Organization","name":"Sala A Fundación","sameAs":"https://www.instagram.com/mosto_pt/"}
@@ -93,13 +108,13 @@
 </head>
 <body>
   <header>
-    <img class="brand-logo" src="logo-sala.jpg" alt="Sala A Fundación" onerror="this.style.display='none'"/>
+    <img class="brand-logo" src="./logo-sala.jpg" alt="Sala A Fundación" onerror="this.style.display='none'"/>
     <div class="brand">Sala A Fundación</div>
   </header>
 
   <section class="hero">
     <!-- Usamos assets locais se existen; se non, cae no fallback de YouTube -->
-    <img src="hero.jpg" onerror="this.onerror=null; this.src='cartel.jpg';" alt="emmy Curl - foto oficial" />
+    <img src="./hero.jpg" onerror="this.onerror=null; this.src='./cartel.jpg';" alt="emmy Curl - foto oficial" />
     <div class="tag">🇵🇹 Artista portuguesa</div>
     <h1 class="hero-title">emmy Curl 🇵🇹 — “Pastoral” ao vivo</h1>
   </section>
@@ -143,7 +158,7 @@
           <p>📩 <a href="mailto:fundacionbowling@gmail.com">fundacionbowling@gmail.com</a></p>
         </div>
         <div class="poster">
-          <img src="cartel.jpg" alt="Cartel oficial — Sala A Fundación" onerror="this.onerror=null; this.src='hero.jpg';" />
+          <img src="./cartel.jpg" alt="Cartel oficial — Sala A Fundación" onerror="this.onerror=null; this.src='./hero.jpg';" />
         </div>
         
 
@@ -189,9 +204,9 @@ document.addEventListener('DOMContentLoaded', function(){
     next();
   }
   const hero = document.querySelector('.hero img');
-  if(hero){ tryLoad(hero, ['hero.jpg','hero.jpeg','Hero.jpg','HERO.JPG','hero.png','cartel.jpg']); }
+  if(hero){ tryLoad(hero, ['./hero.jpg','hero.jpg','hero.jpeg','Hero.jpg','HERO.JPG','hero.png','./cartel.jpg','cartel.jpg']); }
   const poster = document.querySelector('.poster img');
-  if(poster){ tryLoad(poster, ['cartel.jpg','cartel.jpeg','Cartel.jpg','CARTEL.JPG','cartel.png','hero.jpg']); }
+  if(poster){ tryLoad(poster, ['./cartel.jpg','cartel.jpg','cartel.jpeg','Cartel.jpg','CARTEL.JPG','cartel.png','./hero.jpg','hero.jpg']); }
 
   // Miniaturas para os vídeos de YouTube
   document.querySelectorAll('.yt').forEach(box=>{
