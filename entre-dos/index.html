@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entre dos · Teté Delgado & Julio Pereira · Sala A Fundación Bowling (Melide)</title>
+
+  <!-- SEO / Social -->
+  Entre dos — unha comedia adulta e retrofuturista con Teté Delgado & Julio Pereira. Venres, 7 de novembro, 22:00 h · Sala A Fundación Bowling (Melide). Anticipada: 10€ pé / 12€ sentadas · Billeteira: 12€ pé / 14€ sentadas.$2
+  Entre dos · Teté Delgado & Julio Pereira
+  <meta property="og:description" content="Venres, 7 de novembro · 22:00 h · Sala A Fundación Bowling (Melide)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./hero.jpg" />
+  <meta name="theme-color" content="#075ebf" />
+
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#111111;
+      --blue:#075ebf; --red:#f5062e;
+      --mut:#80899d; --light:#f7f8fb; --border:#e6e8ee; --card:#ffffff;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--fg); line-height:1.65; position:relative}
+    header{display:flex; align-items:center; justify-content:center; gap:12px; padding:18px; border-bottom:1px solid var(--border)}
+    header .brand-logo{height:56px; width:auto; border-radius:8px}
+    header .brand{font-weight:900; letter-spacing:.5px; color:var(--blue); font-size:1.15rem}
+
+    .hero{position:relative; overflow:hidden}
+    .hero img{width:100%; height:56vh; object-fit:cover; display:block}
+    .tag{position:absolute; left:16px; top:16px; background:rgba(255,255,255,.9); color:var(--blue); padding:6px 10px; border-radius:999px; font-weight:700; font-size:.95rem; border:1px solid rgba(7,94,191,.25); backdrop-filter:blur(4px)}
+    .hero-title{position:absolute; left:50%; bottom:44px; transform:translateX(-50%); background:rgba(255,255,255,.95); color:var(--fg); padding:12px 18px; border-radius:var(--radius); border:1px solid var(--border); font-size: clamp(1.75rem, 3.6vw, 2.4rem); font-weight:800; letter-spacing:.5px}
+
+    main{max-width:980px; margin:0 auto; padding:24px 16px 40px}
+    .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:24px}
+    @media (max-width:880px){ .grid{grid-template-columns:1fr} }
+
+    .card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px}
+    h2{margin:.2rem 0 1rem; font-size:1.25rem; color:var(--blue)}
+    .meta p{margin:.35rem 0}
+    .price{display:inline-block; margin-top:.5rem; color:#fff; background:var(--red); font-weight:800; padding:6px 10px; border-radius:8px}
+    .muted{color:var(--mut); font-size:.95rem}
+    .bio{white-space:pre-line}
+
+    .notice{background:var(--light); border:1px solid var(--border); border-left:4px solid var(--red); padding:12px 14px; border-radius:10px; margin:10px 0}
+    .notice strong{color:var(--red)}
+
+    .poster{margin-top:12px}
+    .poster img{width:100%; height:auto; display:block; border:1px solid var(--border); border-radius:12px}
+
+    .people{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:10px}
+    .person{display:flex; gap:12px; align-items:flex-start; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px}
+    .person img{width:96px; height:96px; object-fit:cover; border-radius:10px; border:1px solid var(--border)}
+    .person .name{font-weight:800}
+    .person .role{font-size:.95rem; color:var(--mut)}
+    @media (max-width:700px){ .people{grid-template-columns:1fr} }
+
+    /* Marca de auga co logo no fondo */
+    header, .hero, main, .follow-sala, footer{position:relative; z-index:1}
+    body::after{content:""; position:fixed; inset:0; z-index:0; pointer-events:none; background-image:url('./logo-sala.jpg'); background-repeat:no-repeat; background-position:center 60vh; background-size:min(70vw, 720px); opacity:.20; filter:grayscale(0.1)}
+    @media (max-width:700px){ body::after{background-size:90vw; background-position:center 70vh; opacity:.16} }
+
+    /* ——— Móbil: título sen caixa sobre a foto ——— */
+    @media (max-width:700px){
+      .hero img{height:48vh}
+      .hero-title{background:transparent; color:#fff; border:0; padding:6px 10px; text-shadow:0 4px 16px rgba(0,0,0,.45), 0 1px 2px rgba(0,0,0,.6)}
+      .hero::after{content:""; position:absolute; left:0; right:0; bottom:0; height:42%; background:linear-gradient(to top, rgba(0,0,0,.38), rgba(0,0,0,0)); pointer-events:none}
+    }
+
+    .follow-sala{display:flex; justify-content:center; margin:24px 0 0}
+    .follow-sala .btn{font-size:1rem; background:var(--blue); color:#fff; border:1px solid var(--blue); display:inline-flex; align-items:center; gap:10px; padding:.85rem 1.15rem}
+    .follow-sala .btn:hover{filter:brightness(.92); text-decoration:none}
+    .follow-sala .btn svg{width:18px; height:18px; display:block; flex:0 0 18px}
+  .hero-sub{position:absolute; left:50%; bottom:12px; transform:translateX(-50%); background:rgba(255,255,255,.92); color:var(--fg); padding:6px 10px; border-radius:10px; border:1px solid var(--border); font-weight:700; font-size:clamp(.95rem,2.2vw,1.05rem)}
+    @media (max-width:700px){
+      .hero-sub{background:transparent; color:#fff; border:0; padding:4px 8px; text-shadow:0 4px 16px rgba(0,0,0,.45), 0 1px 2px rgba(0,0,0,.6); bottom:10px}
+    }
+  </style>
+
+  <!-- Schema.org (TheaterEvent) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"TheaterEvent",
+    "name":"Entre dos",
+    "startDate":"2025-11-07T22:00:00+01:00",
+    "eventStatus":"https://schema.org/EventScheduled",
+    "location":{"@type":"TheaterEventLocation","name":"Sala A Fundación Bowling","address":{"@type":"PostalAddress","addressLocality":"Melide","addressRegion":"A Coruña","addressCountry":"ES"}},
+    "image":["./hero.jpg"],
+    "performer":[{"@type":"Person","name":"Teté Delgado"},{"@type":"Person","name":"Julio Pereira"}],
+    "offers":[
+      {"@type":"Offer","price":"10","priceCurrency":"EUR","category":"advance","name":"Anticipada pé"},
+      {"@type":"Offer","price":"12","priceCurrency":"EUR","category":"advance","name":"Anticipada sentadas"},
+      {"@type":"Offer","price":"12","priceCurrency":"EUR","category":"door","name":"Billeteira pé"},
+      {"@type":"Offer","price":"14","priceCurrency":"EUR","category":"door","name":"Billeteira sentadas"}
+    ],
+    "organizer":{"@type":"Organization","name":"Sala A Fundación Bowling"}
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <img class="brand-logo" src="./logo-sala.jpg" alt="Sala A Fundación Bowling" onerror="this.style.display='none'"/>
+    <div class="brand">Sala A Fundación Bowling</div>
+  </header>
+
+  <section class="hero">
+    <img src="./hero.jpg" onerror="this.onerror=null; this.src='./cartel.jpg';" alt="Entre dos — foto oficial" />
+    <div class="tag">Espectáculo teatral</div>
+    <h1 class="hero-title">Entre dos — Teté Delgado & Julio Pereira</h1>
+    <div class="hero-sub">Unha comedia adulta e retrofuturista</div>
+  </section>
+
+  <main>
+    <div class="grid">
+      <section class="card">
+        <h2>Sinopse</h2>
+        $1<strong>Entre dos</strong> é unha comedia <em>adulta e retrofuturista</em> na que Teté Delgado e Julio Pereira exploran as fantasías, a parella e o sexo na era actual, abrindo tamén un espazo para que o público poida participar e achegar.
+
+Un espectáculo próximo, divertido e con mirada lúcida que convida a rir e a recoñecerse no espello. Pensado para público adulto.$2
+
+        <h2 style="margin-top:1.25rem">Elenco</h2>
+        <div class="people">
+          <div class="person">
+            <img src="./tete.jpg" alt="Teté Delgado" onerror="this.style.display='none'" />
+            <div>
+              <div class="name">Teté Delgado</div>
+              <div class="role">Actriz</div>
+              <div class="muted">Actriz, presentadora, cantante e locutora. Show‑woman con ampla traxectoria en TV ("El Súper", "Tu Cara Me Suena", "¡Mira quién baila!", "Pratos Combinados", "A escoba", "Son de Estrelas", "La Jungla", "Ellas y el sexo débil", "Familia"), teatro ("El pisito", "El amor enamorado", "Gorda") e máis. Vocalista do grupo <strong>Teté y Los Cliclones</strong>.</div>
+            </div>
+          </div>
+          <div class="person">
+            <img src="./julio.jpg" alt="Julio Pereira" onerror="this.style.display='none'" />
+            <div>
+              <div class="name">Julio Pereira</div>
+              <div class="role">Actor</div>
+              <div class="muted">Actor, guionista e director con carreira en España e América Latina. En TV: "Libro de Familia", "Fontealba", "Matadero", "Los misterios de Laura", "Los hombres de Paco", "Amar es para siempre", "Los Serrano", "Aída", "Mía es la venganza", "La Academia", "La Promesa".</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Se hai trailer ou entrevistas, podemos engadir vídeos como nas fichas musicais -->
+        <!--
+        <h2 style="margin-top:1.25rem">Coñece mellor o espectáculo</h2>
+        <div class="yt" data-id="YOUTUBE_ID_TRAILER">
+          <div class="play"><span>▶︎ Ver trailer</span></div>
+        </div>
+        -->
+      </section>
+
+      <aside class="card meta">
+        <h2>Info do espectáculo</h2>
+        <p>📅 <strong>Venres, 7 de novembro</strong></p>
+        <p>⏰ <strong>22:00 h</strong></p>
+        <p>📍 <strong>Sala A Fundación Bowling (Melide)</strong></p>
+        <p class="price">Anticipada: 10€ (pé) · 12€ (sentadas)</p>
+        <p class="price">Billeteira: 12€ (pé) · 14€ (sentadas)</p>
+
+        <div class="notice">
+          <strong>Info entradas</strong>
+          <p>Merca a túa entrada anticipada na Fundación ou fai a túa reserva a través do noso Instagram ou por correo electrónico.</p>
+          <p>📩 <a href="mailto:fundacionbowling@gmail.com">fundacionbowling@gmail.com</a></p>
+        </div>
+
+        <div class="poster">
+          <img src="./cartel.jpg" alt="Cartel oficial — Sala A Fundación Bowling" onerror="this.onerror=null; this.src='./hero.jpg';" />
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="follow-sala">
+    <a class="btn" href="https://www.instagram.com/fundacionbowling/" target="_blank" rel="noopener" aria-label="Síguenos en Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm6-1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/>
+      </svg>
+      <span>Síguenos en Instagram</span>
+    </a>
+  </div>
+
+  <footer>
+    © 2025 Sala A Fundación Bowling · Melide
+  </footer>
+
+  <script>
+  // Miniaturas e reprodución para vídeos YouTube (se activas o bloque)
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.yt').forEach(box=>{
+      const id = box.getAttribute('data-id');
+      if(id){ box.style.backgroundImage = 'url(https://img.youtube.com/vi/'+id+'/hqdefault.jpg)'; }
+      const btn = box.querySelector('.play');
+      if(btn){
+        btn.addEventListener('click', ()=>{
+          box.innerHTML = '<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        }, { once: true });
+      }
+    });
+  });
+  </script>
+</body>
+</html>
 
