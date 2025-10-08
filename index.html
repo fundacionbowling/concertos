@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eventos · Sala A Fundación</title>
+
+  <meta name="description" content="Listado de eventos da Sala A Fundación. Preme en cada evento para abrir a súa ficha completa." />
+  <meta property="og:title" content="Eventos · Sala A Fundación" />
+  <meta property="og:description" content="Preme en cada evento para ver a ficha completa." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#075ebf" />
+
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#111111; --blue:#075ebf; --red:#f5062e;
+      --mut:#80899d; --light:#f7f8fb; --border:#e6e8ee; --card:#ffffff; --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--fg); background:var(--bg);}
+    header{display:flex; align-items:center; justify-content:center; gap:12px; padding:18px; border-bottom:1px solid var(--border)}
+    header img{height:56px; width:auto; border-radius:8px}
+    header .brand{font-weight:900; color:var(--blue); letter-spacing:.4px}
+
+    main{max-width:1000px; margin:0 auto; padding:22px 16px 40px}
+    h1{margin:.2rem 0 1rem; font-size:clamp(1.4rem,3vw,1.9rem); color:var(--blue)}
+    .muted{color:var(--mut)}
+
+    .section{margin-top:18px}
+    .list{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    @media (max-width:800px){ .list{grid-template-columns:1fr} }
+    .card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:14px; display:flex; gap:12px; align-items:center; text-decoration:none; color:inherit}
+    .date{min-width:94px; text-align:center; border-right:1px dashed var(--border); padding-right:12px}
+    .day{display:block; font-weight:900; font-size:1.3rem}
+    .mon{display:block; color:var(--mut); text-transform:uppercase; letter-spacing:.5px}
+    .info{flex:1}
+    .artist{font-weight:800}
+    .meta{font-size:.95rem; color:var(--mut)}
+    .goto{font-weight:800; color:var(--blue)}
+
+    footer{padding:24px 16px; text-align:center; color:var(--mut); border-top:1px solid var(--border)}
+  .pill{display:inline-block;background:var(--blue);color:#fff;border-radius:999px;padding:2px 8px;font-size:.78rem;font-weight:700;margin-right:8px}
+    .line1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Recoméndase copiar aquí tamén logo-sala.jpg (mesmo que nas fichas) para que cargue o logo -->
+    <img src="logo-sala.jpg" alt="Sala A Fundación" onerror="this.style.display='none'">
+    <div class="brand">Sala A Fundación</div>
+  </header>
+
+  <main>
+    <h1>Eventos</h1>
+    <p class="muted">Preme nun evento para abrir a súa ficha.</p>
+
+    <section class="section" id="proximos">
+      <h2 style="margin:.2rem 0 .6rem; color:var(--blue); font-size:1.1rem">Próximos</h2>
+      <div class="list" id="list-upcoming"></div>
+    </section>
+
+    <section class="section" id="pasados">
+      <h2 style="margin:1.2rem 0 .6rem; color:var(--blue); font-size:1.1rem">Pasados</h2>
+      <div class="list" id="list-past"></div>
+    </section>
+  </main>
+
+  <footer>© 2025 Sala A Fundación · Melide</footer>
+
+  <script>
+  // ——— Fonte de datos: engade aquí os eventos ———
+  // url: cartafol do artista (ex: "emmy-curl/" ou "entre-dos/")
+  const events = [
+    {
+      date: "2025-11-28", time: "23:00",
+      type: "Concerto",
+      artist: "emmy Curl", flag: "🇵🇹",
+      venue: "Sala A Fundación (Melide)",
+      price: "8€ anticipada · 10€ billeteira",
+      url: "emmy-curl/"
+    },
+    {
+      date: "2025-11-07", time: "22:00",
+      type: "Teatro",
+      artist: "Entre dos — Teté Delgado & Julio Pereira",
+      venue: "Sala A Fundación Bowling (Melide)",
+      price: "10/12€ anticipada · 12/14€ billeteira",
+      url: "entre-dos/"
+    }
+  ];
+
+  function monthLabel(d){
+    return d.toLocaleDateString('gl-ES',{month:'short'}).replace('.', '');
+  }
+  function dayNum(d){ return String(d.getDate()).padStart(2,'0'); }
+
+  const today = new Date(); today.setHours(0,0,0,0);
+  const upcoming = [], past = [];
+  events.forEach(ev=>{
+    const d = new Date(ev.date + 'T00:00:00');
+    const item = {...ev, _date:d};
+    (d >= today ? upcoming : past).push(item);
+  });
+  upcoming.sort((a,b)=>a._date-b._date);
+  past.sort((a,b)=>b._date-a._date);
+
+  function card(ev){
+    const d = ev._date;
+    return `
+      <a class="card" href="${ev.url}">
+        <div class="date">
+          <span class="day">${dayNum(d)}</span>
+          <span class="mon">${monthLabel(d)}</span>
+        </div>
+        <div class="info">
+          <div class="line1">${ev.type ? `<span class="pill">${ev.type}</span>` : ''}<span class="artist">${ev.artist}</span> ${ev.flag ? `<span title="orixe">${ev.flag}</span>` : ''}</div>
+          <div class="meta">${ev.time ? ev.time + ' · ' : ''}${ev.venue || ''}${ev.price ? ` · ${ev.price}` : ''}</div>
+        </div>
+        <div class="goto" aria-hidden>→</div>
+      </a>`;
+  }
+
+  document.getElementById('list-upcoming').innerHTML = upcoming.map(card).join('') || '<p class="muted">(Sen eventos)</p>';
+  document.getElementById('list-past').innerHTML = past.map(card).join('') || '<p class="muted">(Aínda non hai pasados)</p>';
+</script>
+</body>
+</html>
