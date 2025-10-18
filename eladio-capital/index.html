@@ -50,6 +50,9 @@
       <p>Eladio y los Seres Queridos son unha das bandas galegas máis emblemáticas dos últimos vinte anos. Cun son que combina pop, rock e unha lírica chea de ironía e emoción, levan 6 discos e unha traxectoria recoñecida con múltiples premios. Ao longo da súa carreira compartiron escenario con artistas como Amaral, Xoel López ou Depedro, e o seu último traballo, <em>B.S.O 2005–2025</em>, recolle vinte anos de cancións cunha nova vida en directo e colaboracións de luxo. As súas letras, sinxelas pero fondas, celebran a vida, o amor e as contradicións de quen observa o mundo cun sorriso lúcido.</p>
       <h2>Sobre Capital Voskov</h2>
       <p>Capital Voskov é unha banda galega emerxente que mestura frescura, contundencia e melodías coidadas. Gañadores do Queixo Maquetón, destacan pola súa posta en escena e a súa conexión co público. Con influencias do pop alternativo e do indie contemporáneo, o grupo combina letras introspectivas cunha forza sonora que os converte nunha das propostas máis interesantes da nova escena musical galega. A súa música fala de identidade, loita e esperanza, cunha enerxía que se sente en cada directo.</p>
+    <h2>Coñece máis</h2>
+      <div class="yt" data-id="DDKj6PFh9dM"><div class="play"><span>▶︎ Eladio y los Seres Queridos</span></div></div>
+      <div class="yt" data-id="dSmIUxqLxKU" style="margin-top:12px"><div class="play"><span>▶︎ Capital Voskov</span></div></div>
     </section>
     <aside class="card">
       <h2>Info do concerto</h2>
@@ -66,5 +69,20 @@
     </aside>
   </main>
   <footer>© 2025 Sala A Fundación Bowling · Melide</footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.yt').forEach(box=>{
+        const id = box.getAttribute('data-id');
+        if(id){ box.style.backgroundImage = 'url(https://img.youtube.com/vi/'+id+'/hqdefault.jpg)';
+          box.style.backgroundSize = 'cover'; box.style.backgroundPosition='center'; box.style.borderRadius='12px'; box.style.overflow='hidden'; box.style.height='220px'; box.style.cursor='pointer';
+          const btn = box.querySelector('.play');
+          if(btn){btn.style.display='flex';btn.style.justifyContent='center';btn.style.alignItems='center';btn.style.height='100%';btn.style.background='rgba(0,0,0,0.4)';btn.style.color='#fff';btn.style.fontWeight='700';btn.style.fontSize='1.1rem';btn.style.textShadow='0 2px 6px rgba(0,0,0,.5)';}
+          box.addEventListener('click', ()=>{
+            box.innerHTML='<iframe width="100%" height="220" src="https://www.youtube.com/embed/'+id+'?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+          }, {once:true});
+        }
+      });
+    });
+  </script>
 </body>
 </html>
