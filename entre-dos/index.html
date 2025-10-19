@@ -85,6 +85,20 @@ header .brand-logo{
 }
 /* Por se existe algún reset que faga img {max-width:100%} no header */
 header img{max-width:none; width:auto;}
+
+  /* — Ajuste título en móvil (Entre dos) — */
+@media (max-width:700px){
+  .hero-title{
+    font-size: clamp(1.05rem, 4.8vw, 1.35rem); /* más pequeño */
+    bottom: 16px;                 /* un poco más arriba del borde */
+    line-height: 1.15;            /* compacto */
+    text-align: center;
+    padding: 0 8px;               /* pequeño margen lateral por si recorta */
+    background: transparent;      /* sin caja */
+    border: 0;
+    text-shadow: 0 4px 16px rgba(0,0,0,.45), 0 1px 2px rgba(0,0,0,.6); /* legible */
+  }
+}
   </style>
 
   <!-- Schema.org (TheaterEvent) -->
