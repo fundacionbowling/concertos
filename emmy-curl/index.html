@@ -106,6 +106,16 @@
   .follow-sala .btn svg{width:18px; height:18px; display:block; flex:0 0 18px}
   .follow-sala .btn:hover{filter:brightness(.95); text-decoration:none}
   .follow-sala .btn svg{width:18px; height:18px; display:block; flex:0 0 18px}
+    /* Fix: que o logo non se dispare no header ao convertelo en ligazón */
+header a.header-link{
+  display:flex; align-items:center; justify-content:center;
+  gap:12px; text-decoration:none;
+}
+header .brand-logo{
+  height:56px; width:auto; border-radius:8px;
+}
+/* Por se existe algún reset que faga img {max-width:100%} no header */
+header img{max-width:none; width:auto;}
   </style>
 
   <!-- Schema.org (Event) -->
