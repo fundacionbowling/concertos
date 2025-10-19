@@ -75,6 +75,16 @@
     @media (max-width:700px){
       .hero-sub{background:transparent; color:#fff; border:0; padding:4px 8px; text-shadow:0 4px 16px rgba(0,0,0,.45), 0 1px 2px rgba(0,0,0,.6); bottom:10px}
     }
+      /* Fix: que o logo non se dispare no header ao convertelo en ligazón */
+  header a.header-link{
+  display:flex; align-items:center; justify-content:center;
+  gap:12px; text-decoration:none;
+}
+header .brand-logo{
+  height:56px; width:auto; border-radius:8px;
+}
+/* Por se existe algún reset que faga img {max-width:100%} no header */
+header img{max-width:none; width:auto;}
   </style>
 
   <!-- Schema.org (TheaterEvent) -->
